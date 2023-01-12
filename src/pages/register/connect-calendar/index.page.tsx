@@ -12,7 +12,7 @@ export default function Register() {
   const router = useRouter()
 
   const hasAuthError = !!router.query.error
-  const isSigniIn = session.status === 'authenticated'
+  const isSignIn = session.status === 'authenticated'
 
   async function handleConnectCalendar() {
     await signIn('google')
@@ -33,7 +33,7 @@ export default function Register() {
         <ConnectItem>
           <Text>Google Calendar</Text>
 
-          {isSigniIn ? (
+          {isSignIn ? (
             <Button size="sm" disabled>
               Conectado
               <Check />
@@ -56,7 +56,7 @@ export default function Register() {
           </AuthError>
         )}
 
-        <Button type="submit" disabled={!isSigniIn}>
+        <Button type="submit" disabled={!isSignIn}>
           Proximo passo
           <ArrowRight />
         </Button>
