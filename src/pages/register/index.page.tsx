@@ -22,7 +22,7 @@ const registerFormSchema = z.object({
 
 type RegisterFormData = z.infer<typeof registerFormSchema>
 
-export default function Register() {
+export default function ConnectCalendar() {
   const {
     register,
     handleSubmit,
