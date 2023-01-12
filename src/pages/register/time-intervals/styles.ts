@@ -1,4 +1,4 @@
-import { Box, styled } from '@enay-ui/react'
+import { Box, styled, Text } from '@enay-ui/react'
 
 export const IntervalBox = styled(Box, {
   marginTop: '$6',
@@ -37,4 +37,9 @@ export const IntervalInputs = styled('div', {
   'input::-webkit-calendar-picker-indicator': {
     filter: 'invert(100%) brightness(30%)',
   },
+})
+
+export const FormError = styled(Text, {
+  color: '$red300',
+  marginBottom: '$4',
 })
