@@ -2,6 +2,7 @@ import { Avatar, Heading, Text } from '@enay-ui/react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import * as React from 'react'
 import { prisma } from '../../../lib/prisma'
+import ScheduleForm from './ScheduleForm'
 import { Container, UserHeader } from './styles'
 
 interface ScheduleProps {
@@ -20,6 +21,8 @@ export default function Schedule({ user }: ScheduleProps) {
         <Heading>{user.name}</Heading>
         <Text>{user.bio}</Text>
       </UserHeader>
+
+      <ScheduleForm />
     </Container>
   )
 }
