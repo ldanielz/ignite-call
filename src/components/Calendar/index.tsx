@@ -98,8 +98,6 @@ export default function Calendar({
     return calendarWeeks
   }, [currentDate])
 
-  console.log(calendarWeeks)
-
   function handlePreviousMonth() {
     const previousMonth = currentDate.subtract(1, 'month')
 
