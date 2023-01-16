@@ -45,7 +45,7 @@ export default async function handle(
     SELECT 
       EXTRACT(DAY FROM S.date) AS date,
       COUNT(S.date) AS amount,
-      ((UTI.end_time_in_minutes - UTI.time_start_in_minutes) / 60) AS size
+      ((UTI.time_end_in_minutes - UTI.time_start_in_minutes) / 60) AS size
     FROM schedulings S
 
     LEFT JOIN user_time_intervals UTI
@@ -55,7 +55,7 @@ export default async function handle(
       AND DATE_FORMAT(S.date, "%Y-%m") = ${`${year}-${month}`}
 
     GROUP BY EXTRACT(DAY FROM S.date),
-      ((UTI.end_time_in_minutes - UTI.time_start_in_minutes) / 60)
+      ((UTI.time_end_in_minutes - UTI.time_start_in_minutes) / 60)
 
     HAVING amount >= size
   `
